@@ -266,6 +266,12 @@ header.top h1 {
     -ms-flex-pack: center;
     justify-content: center;
 }
+
+@media (max-width: 992px) {
+    header.top h1 {
+        font-size: 10rem;
+    }
+}
 header.top h1 .ofThe {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -643,4 +649,7 @@ input[type="submit"].twitter:after {
 .store-selector button[type="text"] {
     text-align: center;
     font-size: 3rem;
+}
+.notFound {
+    text-align: center;
 }
