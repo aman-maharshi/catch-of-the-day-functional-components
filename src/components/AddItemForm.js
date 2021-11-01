@@ -16,7 +16,6 @@ const AddItemForm = ({ AddItem }) => {
     const handleFormSubmit = e => {
         e.preventDefault()
 
-        // console.log(item)
         AddItem(item)
 
         setItem({

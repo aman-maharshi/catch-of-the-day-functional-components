@@ -488,7 +488,7 @@ ul.order li span.count span {
     width: 100%;
     border: 0;
 }
-.list-of-fish {
+.list-of-items {
     border-top: 2px solid #000;
     border-bottom: 1px solid #000;
     padding-top: 5px;
@@ -496,7 +496,7 @@ ul.order li span.count span {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
-.menu-fish {
+.menu-item {
     border-bottom: 2px solid #000;
     border-top: 1px solid #000;
     padding-bottom: 2rem;
@@ -505,11 +505,11 @@ ul.order li span.count span {
     clear: both;
     overflow: hidden;
 }
-.menu-fish p {
-    margin: 0;
+.menu-item p {
+    margin: 5px 0;
     font-size: 1.8rem;
 }
-.menu-fish .fish-name {
+.menu-item .item-name {
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -520,16 +520,19 @@ ul.order li span.count span {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    font-size: 2.25rem;
 }
-.menu-fish .price {
+.menu-item .price {
     font-size: 1.4rem;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
+    background: yellow;
+    padding: 5px;
 }
-.menu-fish img {
+.menu-item img {
     float: left;
-    width: 150px;
+    width: 120px;
     margin-right: 1rem;
 }
 button,
