@@ -650,6 +650,9 @@ input[type="submit"].twitter:after {
     text-align: center;
     font-size: 3rem;
 }
-.notFound {
+.notFoundWrapper {
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 5rem;
 }

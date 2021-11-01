@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-
 import StorePicker from "./components/StorePicker"
 import App from "./components/App"
 import NotFound from "./components/NotFound"
