@@ -1,6 +1,6 @@
 import React from "react"
 
-const Item = ({ details }) => {
+const Item = ({ itemKey, addToOrder, details }) => {
     const { name, price, status, desc, image } = details
     const isAvailable = status === "available"
     return (
@@ -11,7 +11,9 @@ const Item = ({ details }) => {
                 <span className="price">₹ {price}</span>
             </h3>
             <p>{desc}</p>
-            <button disabled={!isAvailable}>{isAvailable ? "Add to Order" : "Sold Out"}</button>
+            <button onClick={() => addToOrder(itemKey)} disabled={!isAvailable}>
+                {isAvailable ? "Add to Order" : "Sold Out"}
+            </button>
         </li>
     )
 }
