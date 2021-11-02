@@ -6,7 +6,7 @@ const Inventory = ({ AddItem, loadSampleItems }) => {
         <div>
             <h2>Inventory</h2>
             <AddItemForm AddItem={AddItem} />
-            <button onClick={loadSampleItems}>Load Sample Items</button>
+            {/* <button onClick={loadSampleItems}>Load Sample Items</button> */}
         </div>
     )
 }

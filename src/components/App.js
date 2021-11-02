@@ -37,7 +37,7 @@ const App = () => {
                     })}
                 </ul>
             </div>
-            <Order />
+            <Order allItems={allItems} order={order} />
             <Inventory AddItem={AddItem} loadSampleItems={loadSampleItems} />
         </div>
     )
