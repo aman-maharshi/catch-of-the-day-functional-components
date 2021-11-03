@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Header from "./Header"
 import Order from "./Order"
 import Inventory from "./Inventory"
@@ -7,7 +7,11 @@ import Item from "./Item"
 
 const App = () => {
     const [allItems, setAllItems] = useState(data)
-    const [order, setOrder] = useState({})
+    const [order, setOrder] = useState(JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : {})
+
+    useEffect(() => {
+        localStorage.setItem("order", JSON.stringify(order))
+    }, [order])
 
     const AddItem = item => {
         setAllItems({
@@ -27,6 +31,12 @@ const App = () => {
         })
     }
 
+    const removeItemFromOrder = orderItem => {
+        let orderCopy = { ...order }
+        delete orderCopy[orderItem]
+        setOrder(orderCopy)
+    }
+
     return (
         <div className="catch-of-the-day">
             <div className="menu">
@@ -37,7 +47,7 @@ const App = () => {
                     })}
                 </ul>
             </div>
-            <Order allItems={allItems} order={order} />
+            <Order allItems={allItems} order={order} removeItemFromOrder={removeItemFromOrder} />
             <Inventory AddItem={AddItem} loadSampleItems={loadSampleItems} />
         </div>
     )

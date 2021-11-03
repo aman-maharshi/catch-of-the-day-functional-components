@@ -1,6 +1,6 @@
 import React from "react"
 
-const Order = ({ allItems, order }) => {
+const Order = ({ allItems, order, removeItemFromOrder }) => {
     const getCartTotal = () => {
         let total = 0
         Object.keys(order).forEach(item => {
@@ -14,11 +14,12 @@ const Order = ({ allItems, order }) => {
             <h2>Your Order</h2>
             <ul className="order">
                 {Object.keys(order).map(item => (
-                    <li>
+                    <li key={item}>
                         <span>
                             {allItems[item].name} ({order[item]})
                         </span>
                         <span className="price">₹ {order[item] * allItems[item].price}</span>
+                        <button onClick={() => removeItemFromOrder(item)}>✕</button>
                     </li>
                 ))}
 

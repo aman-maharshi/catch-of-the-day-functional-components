@@ -7,20 +7,6 @@ import NotFound from "./components/NotFound"
 
 import "./css/style.css"
 
-// import { BrowserRouter, Match, Miss } from "react-router"
-
-// const Routes = () => {
-//     return (
-//         <BrowserRouter>
-//             <div>
-//                 <Match exactly pattern="/" component={StorePicker} />
-//                 <Match pattern="/store/:storeId" component={App} />
-//                 <Miss component={NotFound} />
-//             </div>
-//         </BrowserRouter>
-//     )
-// }
-
 const Routes = () => {
     return (
         <Router>
