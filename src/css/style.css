@@ -446,6 +446,12 @@ ul.order li span.count span {
 .order-title {
     text-align: center;
 }
+.item-edit-wrapper {
+    padding: 10px;
+    background: #ebebeb;
+    border: 1px solid lightgray;
+    margin-bottom: 1rem;
+}
 .item-edit {
     margin-bottom: 20px;
     border: 2px solid #000;

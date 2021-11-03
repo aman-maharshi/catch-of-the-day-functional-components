@@ -48,7 +48,7 @@ const App = () => {
                 </ul>
             </div>
             <Order allItems={allItems} order={order} removeItemFromOrder={removeItemFromOrder} />
-            <Inventory AddItem={AddItem} loadSampleItems={loadSampleItems} />
+            <Inventory AddItem={AddItem} loadSampleItems={loadSampleItems} allItems={allItems} setAllItems={setAllItems} />
         </div>
     )
 }
