@@ -665,3 +665,6 @@ input[type="submit"].twitter:after {
     margin: 0 auto;
     margin-top: 5rem;
 }
+.remove-item {
+    background: white;
+}

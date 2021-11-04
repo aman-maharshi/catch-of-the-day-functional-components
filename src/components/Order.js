@@ -4,7 +4,7 @@ const Order = ({ allItems, order, removeItemFromOrder }) => {
     const getCartTotal = () => {
         let total = 0
         Object.keys(order).forEach(item => {
-            if (allItems[item].status === "available") {
+            if (allItems[item] && allItems[item].status === "available") {
                 total += order[item] * allItems[item].price
             }
         })
@@ -16,7 +16,7 @@ const Order = ({ allItems, order, removeItemFromOrder }) => {
             <h2>Your Order</h2>
             <ul className="order">
                 {Object.keys(order).map(item => {
-                    if (allItems[item].status === "available") {
+                    if (allItems[item] && allItems[item].status === "available") {
                         return (
                             <li key={item}>
                                 <span>

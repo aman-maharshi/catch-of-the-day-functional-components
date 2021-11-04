@@ -2,7 +2,7 @@ import React from "react"
 import AddItemForm from "./AddItemForm"
 
 const Inventory = ({ AddItem, loadSampleItems, allItems, setAllItems }) => {
-    const changeInventory = (e, itemKey) => {
+    const updateInventoryItem = (e, itemKey) => {
         let currentItem = allItems[itemKey]
 
         // handling price change - string to number
@@ -26,6 +26,12 @@ const Inventory = ({ AddItem, loadSampleItems, allItems, setAllItems }) => {
         })
     }
 
+    const removeInventoryItem = itemKey => {
+        const allItemsCopy = { ...allItems }
+        delete allItemsCopy[itemKey]
+        setAllItems(allItemsCopy)
+    }
+
     return (
         <div>
             <h2>Inventory</h2>
@@ -35,15 +41,18 @@ const Inventory = ({ AddItem, loadSampleItems, allItems, setAllItems }) => {
 
                     return (
                         <div className="item-edit" key={itemKey}>
-                            <input onChange={e => changeInventory(e, itemKey)} defaultValue={item.name} type="text" name="name" placeholder="Item Name" />
-                            <input onChange={e => changeInventory(e, itemKey)} defaultValue={item.price} type="number" name="price" placeholder="Item Price" />
-                            <select onChange={e => changeInventory(e, itemKey)} defaultValue={item.status} name="status">
+                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.name} type="text" name="name" placeholder="Item Name" />
+                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.price} type="number" name="price" placeholder="Item Price" />
+                            <select onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.status} name="status">
                                 <option value="">- Select -</option>
                                 <option value="available">Available</option>
                                 <option value="unavailable">Sold Out</option>
                             </select>
-                            <textarea onChange={e => changeInventory(e, itemKey)} defaultValue={item.desc} name="desc" placeholder="Item Description"></textarea>
-                            <input onChange={e => changeInventory(e, itemKey)} defaultValue={item.image} type="text" name="image" placeholder="Item Image" />
+                            <textarea onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.desc} name="desc" placeholder="Item Description"></textarea>
+                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.image} type="text" name="image" placeholder="Item Image" />
+                            <button className="remove-item" onClick={() => removeInventoryItem(itemKey)}>
+                                Remove Item
+                            </button>
                         </div>
                     )
                 })}
