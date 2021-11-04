@@ -36,29 +36,34 @@ const Inventory = ({ AddItem, loadSampleItems, allItems, setAllItems }) => {
         <div>
             <h2>Inventory</h2>
             <div className="item-edit-wrapper">
-                {Object.keys(allItems).map(itemKey => {
-                    const item = allItems[itemKey]
+                {Object.keys(allItems).length ? (
+                    Object.keys(allItems).map(itemKey => {
+                        const item = allItems[itemKey]
 
-                    return (
-                        <div className="item-edit" key={itemKey}>
-                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.name} type="text" name="name" placeholder="Item Name" />
-                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.price} type="number" name="price" placeholder="Item Price" />
-                            <select onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.status} name="status">
-                                <option value="">- Select -</option>
-                                <option value="available">Available</option>
-                                <option value="unavailable">Sold Out</option>
-                            </select>
-                            <textarea onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.desc} name="desc" placeholder="Item Description"></textarea>
-                            <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.image} type="text" name="image" placeholder="Item Image" />
-                            <button className="remove-item" onClick={() => removeInventoryItem(itemKey)}>
-                                Remove Item
-                            </button>
-                        </div>
-                    )
-                })}
+                        return (
+                            <div className="item-edit" key={itemKey}>
+                                <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.name} type="text" name="name" placeholder="Item Name" />
+                                <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.price} type="number" name="price" placeholder="Item Price" />
+                                <select onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.status} name="status">
+                                    <option value="">- Select -</option>
+                                    <option value="available">Available</option>
+                                    <option value="unavailable">Sold Out</option>
+                                </select>
+                                <textarea onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.desc} name="desc" placeholder="Item Description"></textarea>
+                                <input onChange={e => updateInventoryItem(e, itemKey)} defaultValue={item.image} type="text" name="image" placeholder="Item Image" />
+                                <button className="white-bg" onClick={() => removeInventoryItem(itemKey)}>
+                                    Remove Item
+                                </button>
+                            </div>
+                        )
+                    })
+                ) : (
+                    <button className="yellow-bg" onClick={loadSampleItems}>
+                        Load Sample Items
+                    </button>
+                )}
             </div>
             <AddItemForm AddItem={AddItem} />
-            {/* <button onClick={loadSampleItems}>Load Sample Items</button> */}
         </div>
     )
 }

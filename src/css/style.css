@@ -665,6 +665,17 @@ input[type="submit"].twitter:after {
     margin: 0 auto;
     margin-top: 5rem;
 }
-.remove-item {
+.white-bg {
     background: white;
+}
+.yellow-bg {
+    background: #f5a731;
+}
+@keyframes bounce {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
