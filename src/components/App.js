@@ -40,7 +40,7 @@ const App = () => {
     return (
         <div className="catch-of-the-day">
             <div className="menu">
-                <Header tagline="Hurry Up!" />
+                <Header />
                 <ul className="list-of-items">
                     {Object.keys(allItems).map(item => {
                         return <Item key={item} itemKey={item} addToOrder={addToOrder} details={allItems[item]} />

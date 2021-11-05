@@ -19,4 +19,5 @@ const Routes = () => {
     )
 }
 
-ReactDOM.render(<Routes />, document.getElementById("main"))
+// ReactDOM.render(<Routes />, document.getElementById("main"))
+ReactDOM.render(<App />, document.getElementById("main"))
