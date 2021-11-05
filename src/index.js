@@ -9,7 +9,7 @@ import "./css/style.css"
 
 const Routes = () => {
     return (
-        <Router basename="/catch-of-the-day-functional-components/">
+        <Router>
             <Switch>
                 <Route exact path="/" component={StorePicker} />
                 <Route path="/store/:storeId" component={App} />
