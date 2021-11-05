@@ -47,20 +47,6 @@
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
 }
-@font-face {
-    font-family: "haymakerregular";
-    src: url("./fonts/haymaker-webfont.eot");
-    src: url("./fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/haymaker-webfont.woff") format("woff"), url("./fonts/haymaker-webfont.ttf") format("truetype"), url("./fonts/haymaker-webfont.svg#haymakerregular") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "blanchcaps_inline";
-    src: url("./fonts/blanch_caps_inline-webfont.eot");
-    src: url("./fonts/blanch_caps_inline-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/blanch_caps_inline-webfont.woff") format("woff"), url("./fonts/blanch_caps_inline-webfont.ttf") format("truetype"), url("./fonts/blanch_caps_inline-webfont.svg#blanchcaps_inline") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
 article,
 aside,
 details,
@@ -232,7 +218,6 @@ body {
     font-size: 2rem;
 }
 h1 {
-    font-family: "blanchcaps_inline", sans-serif;
     text-align: center;
     font-weight: normal;
     margin: 0;
@@ -243,7 +228,6 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    font-family: "haymakerregular", sans-serif;
 }
 h2 {
     text-align: center;
@@ -257,8 +241,6 @@ header.top {
     text-align: center;
 }
 header.top h1 {
-    font-size: 14.4rem;
-    line-height: 0.7;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -277,14 +259,12 @@ header.top h1 .ofThe {
     display: -ms-flexbox;
     display: flex;
     font-size: 3rem;
-    color: #f5a623;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: url("images/anchor.svg") center no-repeat;
     background-size: cover;
     padding: 0 1rem;
 }
